@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from drinks import views
+from cache_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('factorial/<int:integer>', views.index, name="factorial")
