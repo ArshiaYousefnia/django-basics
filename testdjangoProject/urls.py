@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from cache_app import views
+from my_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('factorial/<int:integer>', views.index, name="factorial")
+    path('factorial/<int:integer>', views.index, name="factorial"),
+    path('async_poke/<int:num>', views.fact_report, name="cat fact"),
+    path('sync_poke/<int:num>', views.serial_poke, name="serial pokle")
 ]

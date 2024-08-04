@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class DrinksConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'cache_app'
+    name = 'my_app'
