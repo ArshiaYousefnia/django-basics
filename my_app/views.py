@@ -33,7 +33,7 @@ def factorial(integer):
     return out, False
 
 
-async def fetch_random_user(poke_id: int):
+async def fetch_pokemon(poke_id: int):
     url = f"https://pokeapi.co/api/v2/pokemon/{poke_id}"
     async with aiohttp.ClientSession() as client:
         async with client.get(url) as res:
@@ -45,7 +45,9 @@ async def fetch_random_user(poke_id: int):
 async def fact_report(request, num):
     start_time = time.time()
 
-    tasks = [fetch_random_user(i) for i in range(1, num + 1)]
+    tasks = [fetch_pokemon(i) for i in range(1, num + 1)]
+
+    ## asyncio.run(fetch_random_user(40))
 
     data = await asyncio.gather(*tasks)
 
