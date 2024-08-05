@@ -4,6 +4,18 @@ import asyncio
 from django.http import HttpResponse
 import requests
 from django.core.cache import cache
+import logging
+
+
+# logging.basicConfig(
+#    filename="app.log",
+#    encoding="utf-8",
+#    filemode="a",
+#    level=logging.DEBUG,
+#    format="{asctime} - {levelname} - {message}",
+#    style="{",
+#    datefmt="%Y-%m-%d %H:%M",
+# )
 
 
 # Create your views here.
@@ -56,18 +68,24 @@ async def fact_report(request, num):
 
     output = {"time": elapsed_time, 'data': data}
 
+    my_logger = logging.getLogger("my_custom_logger")
+    my_logger.warning(f"async pokemon request: num: {num}, time: {elapsed_time}", exc_info=True)
+
     return HttpResponse(str(output))
 
 
 def serial_poke(request, num):
     start_time = time.time()
 
-    data = [requests.get(f"https://pokeapi.co/api/v2/pokemon/{poke_id}").json()['name'] for poke_id in range(1, num + 1)]
+    data = [requests.get(f"https://pokeapi.co/api/v2/pokemon/{poke_id}").json()['name'] for poke_id in
+            range(1, num + 1)]
 
     end_time = time.time()
     elapsed_time = end_time - start_time
 
     output = {"time": elapsed_time, 'data': data}
 
-    return HttpResponse(str(output))
+    my_logger = logging.getLogger("my_custom_logger")
+    my_logger.warning(f"sync pokemon request: num: {num}, time: {elapsed_time}", exc_info=True)
 
+    return HttpResponse(str(output))
