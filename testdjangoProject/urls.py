@@ -18,9 +18,16 @@ from django.contrib import admin
 from django.urls import path
 
 from my_app import views
+
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('factorial/<int:integer>', views.index, name="factorial"),
     path('async_poke/<int:num>', views.fact_report, name="cat fact"),
-    path('sync_poke/<int:num>', views.serial_poke, name="serial pokle")
+    path('sync_poke/<int:num>', views.serial_poke, name="serial pokle"),
+    path('sentry-debug/', trigger_error),
 ]

@@ -57,7 +57,7 @@ async def fetch_pokemon(poke_id: int):
 async def fact_report(request, num):
     start_time = time.time()
 
-    tasks = [fetch_pokemon(i) for i in range(1, num + 1)]
+    tasks = [fetch_pokemon(i + 20) for i in range(1, num + 1)]
 
     ## asyncio.run(fetch_random_user(40))
 

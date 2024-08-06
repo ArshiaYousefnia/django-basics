@@ -10,8 +10,31 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 from pathlib import Path
+import sentry_sdk
 
-# LOGGING
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-e79wg9@p=*5toq25x2z^i2ww+snpf!xa0e=n9=n0!5$^4w)c+('
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
+# sentry
+sentry_sdk.init(
+    dsn="https://0a9e769ee4b62da3bda274bbbccf5f92@sentry.sabz.dev/663",
+    profiles_sample_rate=1.0,
+    traces_sample_rate=1.0,
+)
+
+
+# logging
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -47,19 +70,13 @@ LOGGING = {
     },
 }
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e79wg9@p=*5toq25x2z^i2ww+snpf!xa0e=n9=n0!5$^4w)c+('
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+# celery
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 # cache
 CACHES = {
@@ -81,7 +98,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'my_app'
+    'my_app',
+    'celery',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -120,8 +139,12 @@ WSGI_APPLICATION = 'testdjangoProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'my_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Arshia136020',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
