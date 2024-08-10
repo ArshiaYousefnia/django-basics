@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49780995-b7e3-41b7-bbf1-97be06ec0e23" name="Changes" comment="changed django default logging config and added a custom handler, logger and formatter.">
+    <list default="true" id="49780995-b7e3-41b7-bbf1-97be06ec0e23" name="Changes" comment="transactions and celery tasks are now monitored on sentry">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_app/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testdjangoProject/celery_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/special.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/special.log" beforeDir="false" afterPath="$PROJECT_DIR$/special.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdjangoProject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/testdjangoProject/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdjangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/testdjangoProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdjangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testdjangoProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +113,11 @@
       <workItem from="1722858397789" duration="2283000" />
       <workItem from="1722870653967" duration="3440000" />
       <workItem from="1722924124453" duration="5742000" />
-      <workItem from="1722930171296" duration="8596000" />
+      <workItem from="1722930171296" duration="10421000" />
+      <workItem from="1723011053784" duration="1130000" />
+      <workItem from="1723016786453" duration="22000" />
+      <workItem from="1723270063918" duration="4577000" />
+      <workItem from="1723274734222" duration="3221000" />
     </task>
     <task id="LOCAL-00001" summary="basic caching of a function added, using celery.">
       <option name="closed" value="true" />
@@ -158,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722858428431</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="transactions and celery tasks are now monitored on sentry">
+      <option name="closed" value="true" />
+      <created>1722943863290</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722943863290</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +190,7 @@
     <MESSAGE value="refactored package name" />
     <MESSAGE value="async/sync view added" />
     <MESSAGE value="changed django default logging config and added a custom handler, logger and formatter." />
-    <option name="LAST_COMMIT_MESSAGE" value="changed django default logging config and added a custom handler, logger and formatter." />
+    <MESSAGE value="transactions and celery tasks are now monitored on sentry" />
+    <option name="LAST_COMMIT_MESSAGE" value="transactions and celery tasks are now monitored on sentry" />
   </component>
 </project>
