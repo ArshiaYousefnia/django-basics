@@ -6,6 +6,8 @@ import requests
 from django.core.cache import cache
 import logging
 
+from django.views.decorators.cache import cache_page
+
 
 # logging.basicConfig(
 #    filename="app.log",
@@ -45,6 +47,7 @@ def factorial(integer):
     return out, False
 
 
+@cache_page(timeout=60 * 30)
 async def fetch_pokemon(poke_id: int):
     url = f"https://pokeapi.co/api/v2/pokemon/{poke_id}"
     async with aiohttp.ClientSession() as client:
@@ -54,6 +57,7 @@ async def fetch_pokemon(poke_id: int):
             return pokemon_data['name']
 
 
+@cache_page(timeout=60 * 30)
 async def fact_report(request, num):
     start_time = time.time()
 

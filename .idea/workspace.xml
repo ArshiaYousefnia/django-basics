@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49780995-b7e3-41b7-bbf1-97be06ec0e23" name="Changes" comment="transactions and celery tasks are now monitored on sentry">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/special.log" afterDir="false" />
+    <list default="true" id="49780995-b7e3-41b7-bbf1-97be06ec0e23" name="Changes" comment="container deployment added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +111,7 @@
       <workItem from="1723011053784" duration="1130000" />
       <workItem from="1723016786453" duration="22000" />
       <workItem from="1723270063918" duration="4577000" />
-      <workItem from="1723274734222" duration="3221000" />
+      <workItem from="1723274734222" duration="3698000" />
     </task>
     <task id="LOCAL-00001" summary="basic caching of a function added, using celery.">
       <option name="closed" value="true" />
@@ -167,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722943863290</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="container deployment added">
+      <option name="closed" value="true" />
+      <created>1723279093223</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723279093223</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +193,7 @@
     <MESSAGE value="async/sync view added" />
     <MESSAGE value="changed django default logging config and added a custom handler, logger and formatter." />
     <MESSAGE value="transactions and celery tasks are now monitored on sentry" />
-    <option name="LAST_COMMIT_MESSAGE" value="transactions and celery tasks are now monitored on sentry" />
+    <MESSAGE value="container deployment added" />
+    <option name="LAST_COMMIT_MESSAGE" value="container deployment added" />
   </component>
 </project>

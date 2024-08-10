@@ -1,2 +1,20 @@
 WARNING - 2024-08-10 08:36:22,175 - my_custom_logger - serial_poke - sync pokemon request: num: 2, time: 0.7017710208892822
 NoneType: None
+WARNING - 2024-08-10 11:09:39,512 - my_custom_logger - fact_report - async pokemon request: num: 5, time: 1.15696120262146
+NoneType: None
+WARNING - 2024-08-10 11:09:47,715 - my_custom_logger - fact_report - async pokemon request: num: 5, time: 1.1165170669555664
+NoneType: None
+WARNING - 2024-08-10 11:09:50,839 - my_custom_logger - fact_report - async pokemon request: num: 5, time: 0.9381089210510254
+NoneType: None
+WARNING - 2024-08-10 11:09:53,179 - my_custom_logger - fact_report - async pokemon request: num: 5, time: 0.6077723503112793
+NoneType: None
+WARNING - 2024-08-10 11:09:55,442 - my_custom_logger - fact_report - async pokemon request: num: 5, time: 0.6225337982177734
+NoneType: None
+WARNING - 2024-08-10 11:10:07,309 - my_custom_logger - serial_poke - sync pokemon request: num: 5, time: 2.848172664642334
+NoneType: None
+WARNING - 2024-08-10 11:12:48,433 - my_custom_logger - serial_poke - sync pokemon request: num: 50, time: 27.042108058929443
+NoneType: None
+WARNING - 2024-08-10 11:14:14,562 - my_custom_logger - fact_report - async pokemon request: num: 100, time: 3.204742431640625
+NoneType: None
+WARNING - 2024-08-10 11:14:54,828 - my_custom_logger - fact_report - async pokemon request: num: 250, time: 7.219693899154663
+NoneType: None
